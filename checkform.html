@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .box {
+            width: 500px;
+            height: 500px;
+            border: 2px solid #ccc;
+            margin: 0 auto;
+        }
+
+        span {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <form action="#" method="post">
+        <table>
+
+            <tr>
+                <td>用户名</td>
+                <td><input type="text" id="username" name="username" size="30"
+                           onfocus="showTips(name,'*用户名必须是六位的数字或者字母')"
+                           onblur="check(name,'用户信息不正确')">
+
+                </td>
+                <td>
+                    <span id="usernamespan"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>密码</td>
+                <td><input type="password" id="password" name="password"
+                           onfocus="showTips(name,'*密码必须是六位数字')" size="30"
+                           onblur="check(name,'密码格式不正确')">
+
+                </td>
+                <td>
+                    <span id="passwordspan"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>确认密码</td>
+                <td><input type="password" name="repassword" id="repassword" size="30"
+                onblur="check(name,'两次密码输入的不一致')">
+                </td>
+                <td>
+                    <span id="repasswordspan"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>性别</td>
+                <td>
+                    <input type="radio" name="gender" value="male">男
+                    <input type="radio" name="gender" value="female">女
+                </td>
+                <td>
+                    <span id="genderspan"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>爱好</td>
+                <td>
+                    <input type="checkbox" value="sing">唱歌
+                    <input type="checkbox" value="dance">跳舞
+                    <input type="checkbox" value="conde">编码
+                </td>
+                <td>
+                    <span id="hobbyspan"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="注册" >
+                </td>
+                <td>
+                    <input type="reset" value="重置">
+                </td>
+                <td></td>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+<script type="text/javascript">
+    function _id(id) {
+        return document.getElementById(id);
+    }
+
+    function _name(name) {
+        return document.getElementsByName(name);
+
+    }
+
+    function check(name, info) {
+        var value = _name(name)[0].value;
+        if (value == '') {
+            _id(name + 'span').innerHTML = info;
+            return false;
+        }
+        else {
+            var reg = regcheck(name, value, info);
+            if (reg == '') {
+                _id(name + 'span').innerHTML = '';
+                return true;
+            }
+            else {
+                _id(name + 'span').innerHTML = info;
+                return false;
+            }
+        }
+    }
+
+    function regcheck(name, value, info) {
+        var msg = '';
+        switch (name) {
+            case 'username':
+                if (!/^[a-zA-Z0-9]{6,10}$/.test(value)) {
+                    msg = info;
+                }
+                break;
+            case 'password':
+                if (!/^.{6}$/.test(value)) {
+                    msg = info;
+                }
+                break;
+            case 'repassword':
+                if (value != _name('password')[0].value) {
+                    msg = info;
+                }
+                break;
+        }
+        return msg;
+
+    }
+
+    function showTips(name, info) {
+        _id(name + 'span').innerHTML = info
+    }
+
+    function checkGender() {
+        var gen = false;
+        var aGender = _name('gender');
+        for (var i = 0; i < aGender.length; i++) {
+            if (aGender[i].checked) {
+                gen = true;
+                break;
+            }
+        }
+        if (!gen) {
+            _id('genderspan').innerHTML ='性别不能为空'
+        }
+        else {
+            _id('genderspan').innerHTML = '';
+        }
+        return gen;
+    }
+
+    onsubmit=function() {
+        var flag = true;
+        if (!check('username', '用户格式不正确')) {
+            flag = false;
+        }
+        if (!check('password', '密码格式不正确')) {
+            flag = false;
+        }
+        if (!check('repassword', '两次密码不一致')) {
+            flag = false
+        }
+        if (!checkGender('gender', '性别不能为空')) {
+            flag = false;
+        }
+        return flag;
+    }
+
+</script>
+</html>
