@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="checkbox" id="ck">
+<!--设置全选和全不选的一个输入行-->
+<hr>
+<div id="div1">
+    <input type="checkbox"><br>
+    <input type="checkbox"><br>
+    <input type="checkbox"><br>
+    <input type="checkbox"><br>
+    <input type="checkbox">
+</div>
+<script type="text/javascript">
+    var ock=document.getElementById('ck')
+//获取到设置成全选的那一行
+    var ack=document.getElementById('div1').getElementsByTagName('input')
+//获取所有的输入行
+    ock.onclick=function () {
+        for(var i=0;i<ack.length;i++){
+            ack[i].checked=ock.checked;
+//  实现全选或者全不选的控制。
+        }
+    }
+</script>
+
+</body>
+</html>
