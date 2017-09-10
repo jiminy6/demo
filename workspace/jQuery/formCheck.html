@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="radio" value="male" name="gender" checked="checked" />男
+<input type="radio" value="female" name="gender"/>女
+
+<input type="checkbox" value="读书" name="hobby" checked="checked"/> 读书
+<input type="checkbox" value="音乐" name="hobby" checked="checked"/> 音乐
+<input type="checkbox" value="绘画" name="hobby"/> 绘画
+
+<select name="city">
+    <option value="">请选择</option>
+    <option value="bj">北京</option>
+    <option selected="selected" value="sh">上海</option>
+    <option value="tj">天津</option>
+</select>
+<!--需求一：获取 单选、复选框选中的项-->
+<!--需求二：获取下拉列表下面选中的option-->
+<script src="JS/jquery-1.11.0.js"></script>
+<script type="text/javascript">
+//   console.log($('input[type=radio]:checked').val());
+//   console.log($('input[type=checkbox]:checked').size());
+   console.log($('option:checked').size())
+   console.log($('select option').size());
+
+
+</script>
+</body>
+</html>

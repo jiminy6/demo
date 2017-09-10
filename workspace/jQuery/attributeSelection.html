@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="JS/jquery-1.11.0.js"></script>
+</head>
+<body>
+<input type="text" value="aaa"/>
+<input type="text" value="bbb"/>
+<input type="text" value="ccc"/>
+<input type="text" value="ddd"/>
+<input type="button" value="aaa"/>
+<input type="button" value="bbb"/>
+<input type="button" value="ccc"/>
+<input type="button" value="abc"/>
+<!-- 需求一：获取所有有type属性的元素
+	  需求二：获取所有type属性值为’text’的元素
+      需求三：获取所有有type属性值不等于’text’的元素
+	  需求四：获取所有value属性值以’a’开头的元素
+	  需求五：获取所有value属性值以’b’结尾的元素
+	  需求六：获取所有value属性值含有’c’的元素
+	  需求七：获取所有value属性值以’a’开头并且含有’c’的元素
+-->
+<script type="text/javascript">
+    var hello=$('input[type]')
+    console.log(hello.size())
+    console.log($('input[value^=a]').size())
+    console.log($('input[type!=text]').size())
+    console.log(($('input[value^=a][value*=c]')).val())
+
+</script>
+</body>
+</html>

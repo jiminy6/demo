@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="checkbox" name="hobby" value="敲代码" id="coding"/>敲代码
+<input type="checkbox" name="hobby" value="调试bug" class="myClass"/>调试bug
+<input type="checkbox" name="hobby" value="谈需求" class="myClass"/>谈需求
+<!--需求一：根据ID来获取敲代码的复选框
+	需求二：根据标签名来获取所有的复选框
+	需求三：根据类名（myClass）来获取所有的复选框
+-->
+<script src="JS/jquery-1.11.0.js"></script>
+<script type="text/javascript">
+    //     console.log( $('input[type]:checkbox').size)
+//    console.log($('#coding').val())
+    //    console.log($('input[type]').size())
+    //    console.log($('.myClass').size())
+//    ;
+    var array=$('.myClass')
+    var num = array.size();
+//    console.log(num)
+    for (var i = 0; i < num; i++) {
+        console.log(array[i].value)
+    }
+//    console.log( $('.myClass').val
+     console.log($('input').size())
+</script>
+</body>
+</html>

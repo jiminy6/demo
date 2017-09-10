@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="JS/jquery-1.11.0.js"></script>
+</head>
+<body>
+<!--<ul id="ul1">-->
+    <!--<li>前台-->
+        <!--<ul>-->
+            <!--<li>html</li>-->
+            <!--<li>css</li>-->
+            <!--<li>js</li>-->
+        <!--</ul>-->
+    <!--</li>-->
+    <!--<li>后台-->
+        <!--<ul>-->
+            <!--<li id="java">Java</li>-->
+            <!--<li>PHP</li>-->
+            <!--<li>Android</li>-->
+        <!--</ul>-->
+    <!--</li>-->
+<!--</ul>-->
+<!--
+需求一：获取id为ul1下面所有的li
+需求二：获取id为ul1的子级
+需求三：获取id为java的li同级下面的一个元素
+需求四：获取id为java的li同级下面的所有元素
+-->
+<ul>
+    <li>Java</li>
+    <li>PHP</li>
+    <li>Android</li>
+    <li>IOS</li>
+</ul>
+
+<!--需求一：获取ul下面的第一个子元素
+需求二：获取ul下面的最后一个子元素
+需求三：获取ul下面索引值为偶数的子元素
+需求四：获取ul下面索引值为奇数的子元素
+需求五：获取ul下面第三个的子元素
+需求六：获取ul下面索引值大于1的子元素
+需求七：获取ul下面索引值小于1的子元素
+-->
+<script type="text/javascript">
+//   console.log( $('#ul1 li').size());
+//   console.log($('#ul1 > li').size())
+//    console.log($('#java + li').html())
+//   //这里是.html而不是.value因为我们获取的是它的文本内容。
+//    console.log($('#java ~ li').size())
+    var java=$('ul li:first');
+    console.log(java.html())
+    console.log(($('ul li:last').html()))
+    console.log(($('ul li:even').size()))
+    console.log($('ul li:lt(1)').html())
+    console.log($('ul li:gt(1)').size())
+</script>
+</body>
+</html>
