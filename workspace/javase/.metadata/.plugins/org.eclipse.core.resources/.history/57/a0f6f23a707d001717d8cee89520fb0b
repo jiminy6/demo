@@ -1,0 +1,20 @@
+package system;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class DateDemo {
+	public static void main(String[] args) {
+		Date d = new Date();
+//		System.out.println(d);
+//		System.out.println(d.toLocaleString());
+		d.setTime(1000*60*60);
+		System.out.println(d);
+		//System.out.println(d.date);
+		//String format(Date(d));
+		SimpleDateFormat sf = new SimpleDateFormat();
+		String s=sf.format(d);
+		System.out.println(s);
+		
+	}
+}

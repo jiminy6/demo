@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.itheima.AbstactDeo&apos; to &apos;AbstactDemo2&apos;&#x0A;- Original project: &apos;Day02&apos;&#x0A;- Original element: &apos;com.itheima.AbstactDeo&apos;&#x0A;- Renamed element: &apos;com.itheima.AbstactDemo2&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;AbstactDeo&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;com.itheima{AbstactDeo.java[AbstactDeo" matchStrategy="1" name="AbstactDemo2" qualified="false" references="true" similarDeclarations="false" stamp="1502528357195" textual="false" version="1.0"/>
+</session>

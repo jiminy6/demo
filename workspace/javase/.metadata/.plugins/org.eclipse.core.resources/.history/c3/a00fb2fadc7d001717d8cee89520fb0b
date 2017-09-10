@@ -1,0 +1,19 @@
+package com.itheima;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
+
+public class Demo4 {
+	public static void main(String[] args) {
+		Map<String,String> map = new HashMap<String,String>();
+		map.put("ITCAST001", "张三");
+		map.put("ITCAST002", "李四");
+		map.put("ITCAST005", "李四");
+		Set<String>keys=map.keySet();
+		for (String key: keys) {
+			System.out.println(key);
+		}
+
+	}
+}

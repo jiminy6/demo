@@ -1,0 +1,15 @@
+package com.ithiema;
+
+import java.lang.reflect.Field;
+
+public class MybeanUtlis {
+	private MybeanUtlis(){
+		
+	}
+	public static void setProperty(Object bean,String name,Object value) throws NoSuchFieldException, SecurityException, Exception, IllegalAccessException{
+		Class clazz=bean.getClass();
+		Field f=clazz.getDeclaredField(name);
+		f.setAccessible(true);
+		f.set(bean, value);
+	}
+}

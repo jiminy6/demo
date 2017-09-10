@@ -1,0 +1,71 @@
+package com.itheima;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Random;
+import java.util.Scanner;
+import java.util.Set;
+
+/*
+ * 	1.产生10个1-20之间的随机数要求随机数不能重复
+	2.产生10个长度为10的不能重复的字符串(里面只能出现大写字母、小写字母、0-9的数字)，并遍历打印输出
+*/
+public class Test3 {
+	public static void main(String[] args) {
+		//method1();
+		//method2();
+		method3();
+	}
+	private static void method2() {
+		
+		Set<Object> set = new HashSet<>();
+		while(set.size()<10){
+			System.out.println("请输入字符串");
+			Scanner sc = new Scanner(System.in);
+			String s=sc.nextLine();
+			if(s.matches("\\w{10}"));
+			set.add(s);
+		}
+		Iterator<Object> it = set.iterator();
+		while(it.hasNext()){
+			System.out.println(it.next());
+		}
+	}
+
+	private static void method1() {
+		Random r = new Random();
+		Set<Object> set = new HashSet<>();
+		while(set.size()<10){
+			int random=r.nextInt(21)+1;
+			set.add(random);
+		}
+		System.out.println(set);
+	}
+	public static void method3(){
+		List<String> list = new ArrayList<>();
+		for (char i = 'a'; i <'z'; i++) {
+			
+			list.add(i+"");
+		}
+		for (char i = 'A'; i <'Z'; i++) {
+			list.add(i+"");
+		}
+		for (int i = 0; i <9; i++) {
+			list.add(i+"");
+		}
+		Collections.shuffle(list);
+		ArrayList<Object> list3 = new ArrayList<>();
+		for (int i = 0; i < 3; i++) {
+			ArrayList<String> list2 = new ArrayList<>();
+			for (int j = 0; j <10; j++) {
+				list2.add(list.get(i));
+			}
+			String s = list2.toString();
+			list3.add(s);
+		}
+		System.out.println(list3);
+	}
+}

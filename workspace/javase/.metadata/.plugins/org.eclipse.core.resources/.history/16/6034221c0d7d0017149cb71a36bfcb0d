@@ -1,0 +1,10 @@
+package com.itheima5;
+
+public class InnterDemo {
+	public static void main(String[] args) {
+		method(new Dog());
+	}
+	public static void method(Animal a){
+		a.eat();
+	}
+}

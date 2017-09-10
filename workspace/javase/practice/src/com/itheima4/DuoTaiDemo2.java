@@ -1,0 +1,27 @@
+package com.itheima4;
+
+public class DuoTaiDemo2 {
+	public static void main(String[] args) {
+		MiFactory factory = new MiFactory();
+		factory.creatPhone(new MiNote());
+		factory.creatPhone(new RedMi() );
+	}
+}
+class MiFactory{
+	public void creatPhone(phone p){
+		p.call();
+	}
+}
+interface phone{
+	public void call();
+}
+class MiNote implements phone{
+	public void call(){
+		System.out.println("我来打电话");
+	}
+}
+class RedMi implements phone {
+	public void call(){
+		System.out.println("我也来打电话");
+	}
+}

@@ -1,0 +1,15 @@
+package com.itheima4;
+
+public class InnerDemo2 {
+	
+}
+class Outter{
+	public void method(){
+		int num=10;
+	}
+	class Inner{
+		public void function(){
+			System.out.println(num);
+		}
+	}
+}

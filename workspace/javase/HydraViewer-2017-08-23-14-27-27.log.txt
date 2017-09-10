@@ -1,0 +1,350 @@
+ 0
+	main thread is 0x7fffa3c733c0
+ 0
+	recv buffer: QVariant(int, 1048576)
+ 0
+	request Role
+ 0
+	Role result is  0
+ 0
+	Role result is  "role_request"
+ 0
+	request Role return "group"
+ 0
+	error frame idx, current recv 418735 Last idx 0
+ 0
+	error frame idx, current recv 419324 Last idx 419309
+ 0
+	error frame idx, current recv 420278 Last idx 420272
+ 0
+	error frame idx, current recv 423146 Last idx 420979
+ 0
+	error frame idx, current recv 435747 Last idx 435737
+ 0
+	error frame idx, current recv 435984 Last idx 435979
+ 0
+	error frame idx, current recv 438176 Last idx 438145
+ 0
+	error frame idx, current recv 449414 Last idx 449412
+ 0
+	error frame idx, current recv 449417 Last idx 449415
+ 0
+	error frame idx, current recv 449420 Last idx 449418
+ 0
+	error frame idx, current recv 449433 Last idx 449431
+ 0
+	error frame idx, current recv 449436 Last idx 449434
+ 0
+	error frame idx, current recv 449440 Last idx 449438
+ 0
+	error frame idx, current recv 449587 Last idx 449584
+ 0
+	error frame idx, current recv 449591 Last idx 449589
+ 0
+	error frame idx, current recv 449596 Last idx 449594
+ 0
+	error frame idx, current recv 449601 Last idx 449599
+ 0
+	error frame idx, current recv 450525 Last idx 450523
+ 0
+	error frame idx, current recv 450529 Last idx 450527
+ 0
+	error frame idx, current recv 450531 Last idx 450529
+ 0
+	error frame idx, current recv 450537 Last idx 450534
+ 0
+	error frame idx, current recv 450690 Last idx 450687
+ 0
+	error frame idx, current recv 450693 Last idx 450690
+ 0
+	error frame idx, current recv 450695 Last idx 450693
+ 0
+	error frame idx, current recv 450704 Last idx 450702
+ 0
+	error frame idx, current recv 451695 Last idx 451693
+ 0
+	error frame idx, current recv 451697 Last idx 451695
+ 0
+	error frame idx, current recv 451699 Last idx 451697
+ 0
+	error frame idx, current recv 451705 Last idx 451703
+ 0
+	error frame idx, current recv 452697 Last idx 452694
+ 0
+	error frame idx, current recv 452701 Last idx 452699
+ 0
+	error frame idx, current recv 454032 Last idx 454018
+ 0
+	error frame idx, current recv 454254 Last idx 454130
+ 0
+	error frame idx, current recv 454274 Last idx 454254
+ 0
+	error frame idx, current recv 454299 Last idx 454276
+ 0
+	error frame idx, current recv 454319 Last idx 454309
+ 0
+	error frame idx, current recv 454337 Last idx 454320
+ 0
+	error frame idx, current recv 454367 Last idx 454337
+ 0
+	error frame idx, current recv 454378 Last idx 454367
+ 0
+	error frame idx, current recv 454412 Last idx 454378
+ 0
+	error frame idx, current recv 454424 Last idx 454419
+ 0
+	error frame idx, current recv 454433 Last idx 454428
+ 0
+	error frame idx, current recv 454455 Last idx 454433
+ 0
+	error frame idx, current recv 454466 Last idx 454456
+ 0
+	error frame idx, current recv 454475 Last idx 454470
+ 0
+	error frame idx, current recv 454484 Last idx 454478
+ 0
+	error frame idx, current recv 454493 Last idx 454487
+ 0
+	error frame idx, current recv 454508 Last idx 454500
+ 0
+	error frame idx, current recv 454519 Last idx 454514
+ 0
+	error frame idx, current recv 454537 Last idx 454528
+ 0
+	error frame idx, current recv 454546 Last idx 454540
+ 0
+	error frame idx, current recv 454557 Last idx 454551
+ 0
+	error frame idx, current recv 454578 Last idx 454563
+ 0
+	error frame idx, current recv 454583 Last idx 454578
+ 0
+	error frame idx, current recv 454605 Last idx 454592
+ 0
+	error frame idx, current recv 454643 Last idx 454638
+ 0
+	error frame idx, current recv 454655 Last idx 454649
+ 0
+	error frame idx, current recv 454663 Last idx 454658
+ 0
+	error frame idx, current recv 454694 Last idx 454681
+ 0
+	error frame idx, current recv 454709 Last idx 454704
+ 0
+	error frame idx, current recv 454732 Last idx 454727
+ 0
+	error frame idx, current recv 454747 Last idx 454742
+ 0
+	error frame idx, current recv 454768 Last idx 454766
+ 0
+	error frame idx, current recv 454772 Last idx 454770
+ 0
+	error frame idx, current recv 454775 Last idx 454773
+ 0
+	error frame idx, current recv 454784 Last idx 454778
+ 0
+	error frame idx, current recv 454824 Last idx 454818
+ 0
+	error frame idx, current recv 454867 Last idx 454862
+ 0
+	error frame idx, current recv 454918 Last idx 454913
+ 0
+	error frame idx, current recv 454971 Last idx 454962
+ 0
+	error frame idx, current recv 454983 Last idx 454977
+ 0
+	error frame idx, current recv 455026 Last idx 455021
+ 0
+	error frame idx, current recv 455113 Last idx 455107
+ 0
+	error frame idx, current recv 455162 Last idx 455156
+ 0
+	error frame idx, current recv 455178 Last idx 455173
+ 0
+	error frame idx, current recv 455186 Last idx 455181
+ 0
+	error frame idx, current recv 455228 Last idx 455223
+ 0
+	error frame idx, current recv 455246 Last idx 455241
+ 0
+	error frame idx, current recv 455352 Last idx 455346
+ 0
+	error frame idx, current recv 455489 Last idx 455483
+ 0
+	error frame idx, current recv 455629 Last idx 455623
+ 0
+	error frame idx, current recv 455761 Last idx 455759
+ 0
+	error frame idx, current recv 455783 Last idx 455777
+ 0
+	error frame idx, current recv 456032 Last idx 456026
+ 0
+	error frame idx, current recv 456113 Last idx 456106
+ 0
+	error frame idx, current recv 456236 Last idx 456230
+ 0
+	error frame idx, current recv 456768 Last idx 456762
+ 0
+	error frame idx, current recv 457700 Last idx 457690
+ 0
+	error frame idx, current recv 458750 Last idx 458739
+ 0
+	error frame idx, current recv 462494 Last idx 462483
+ 0
+	error frame idx, current recv 465388 Last idx 465386
+ 0
+	error frame idx, current recv 465435 Last idx 465433
+ 0
+	error frame idx, current recv 466981 Last idx 466971
+ 0
+	error frame idx, current recv 466989 Last idx 466983
+ 0
+	error frame idx, current recv 467530 Last idx 467524
+ 0
+	error frame idx, current recv 467587 Last idx 467576
+ 0
+	error frame idx, current recv 467981 Last idx 467614
+ 0
+	error frame idx, current recv 470347 Last idx 470337
+ 0
+	error frame idx, current recv 470379 Last idx 470373
+ 0
+	error frame idx, current recv 470389 Last idx 470383
+ 0
+	error frame idx, current recv 470429 Last idx 470424
+ 0
+	error frame idx, current recv 470441 Last idx 470435
+ 0
+	error frame idx, current recv 470518 Last idx 470446
+ 0
+	error frame idx, current recv 470660 Last idx 470654
+ 0
+	error frame idx, current recv 470793 Last idx 470787
+ 0
+	error frame idx, current recv 470870 Last idx 470864
+ 0
+	error frame idx, current recv 470902 Last idx 470897
+ 0
+	error frame idx, current recv 470948 Last idx 470942
+ 0
+	error frame idx, current recv 472433 Last idx 472423
+ 0
+	error frame idx, current recv 472783 Last idx 472777
+ 0
+	error frame idx, current recv 476990 Last idx 476980
+ 0
+	error frame idx, current recv 477003 Last idx 476997
+ 0
+	error frame idx, current recv 477027 Last idx 477022
+ 0
+	error frame idx, current recv 477054 Last idx 477048
+ 0
+	error frame idx, current recv 477072 Last idx 477066
+ 0
+	error frame idx, current recv 477079 Last idx 477073
+ 0
+	error frame idx, current recv 477088 Last idx 477082
+ 0
+	error frame idx, current recv 477104 Last idx 477098
+ 0
+	error frame idx, current recv 477110 Last idx 477105
+ 0
+	error frame idx, current recv 477171 Last idx 477130
+ 0
+	error frame idx, current recv 477194 Last idx 477184
+ 0
+	error frame idx, current recv 477207 Last idx 477201
+ 0
+	error frame idx, current recv 477253 Last idx 477248
+ 0
+	error frame idx, current recv 477281 Last idx 477275
+ 0
+	error frame idx, current recv 477313 Last idx 477308
+ 0
+	error frame idx, current recv 477331 Last idx 477326
+ 0
+	error frame idx, current recv 477345 Last idx 477340
+ 0
+	error frame idx, current recv 477363 Last idx 477354
+ 0
+	error frame idx, current recv 477369 Last idx 477363
+ 0
+	error frame idx, current recv 477387 Last idx 477369
+ 0
+	error frame idx, current recv 477408 Last idx 477398
+ 0
+	error frame idx, current recv 477420 Last idx 477408
+ 0
+	error frame idx, current recv 477433 Last idx 477423
+ 0
+	error frame idx, current recv 477442 Last idx 477433
+ 0
+	error frame idx, current recv 477467 Last idx 477458
+ 0
+	error frame idx, current recv 477481 Last idx 477471
+ 0
+	error frame idx, current recv 477496 Last idx 477490
+ 0
+	error frame idx, current recv 477522 Last idx 477498
+ 0
+	error frame idx, current recv 477535 Last idx 477524
+ 0
+	error frame idx, current recv 477557 Last idx 477551
+ 0
+	error frame idx, current recv 477566 Last idx 477557
+ 0
+	error frame idx, current recv 477591 Last idx 477577
+ 0
+	error frame idx, current recv 477626 Last idx 477613
+ 0
+	error frame idx, current recv 477685 Last idx 477631
+ 0
+	error frame idx, current recv 477713 Last idx 477685
+ 0
+	error frame idx, current recv 477772 Last idx 477766
+ 0
+	error frame idx, current recv 477806 Last idx 477800
+ 0
+	error frame idx, current recv 477830 Last idx 477824
+ 0
+	error frame idx, current recv 477844 Last idx 477839
+ 0
+	error frame idx, current recv 480335 Last idx 480332
+ 0
+	error frame idx, current recv 488879 Last idx 487630
+ 0
+	error frame idx, current recv 489085 Last idx 489076
+ 0
+	error frame idx, current recv 489190 Last idx 489188
+ 0
+	error frame idx, current recv 489194 Last idx 489191
+ 0
+	error frame idx, current recv 489202 Last idx 489199
+ 0
+	error frame idx, current recv 489209 Last idx 489207
+ 0
+	error frame idx, current recv 490204 Last idx 490202
+ 0
+	error frame idx, current recv 491228 Last idx 491226
+ 0
+	error frame idx, current recv 491231 Last idx 491229
+ 0
+	error frame idx, current recv 491240 Last idx 491238
+ 0
+	error frame idx, current recv 501244 Last idx 501242
+ 0
+	error frame idx, current recv 501320 Last idx 501318
+ 0
+	error frame idx, current recv 509063 Last idx 509061
+ 0
+	error frame idx, current recv 509617 Last idx 509601
+ 0
+	error frame idx, current recv 511353 Last idx 511341
+ 0
+	error frame idx, current recv 518186 Last idx 518173
+ 0
+	error frame idx, current recv 518713 Last idx 518711
+ 0
+	error frame idx, current recv 518888 Last idx 518718
+ 0
+	QThread::wait: Thread tried to wait on itself

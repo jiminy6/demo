@@ -1,0 +1,7 @@
+package com.itheima6;
+
+public interface Animal {
+	void eat();
+	
+}
+

@@ -1,0 +1,14 @@
+package com.itheima;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class SimpleDateDemo {
+	public static void main(String[] args) {
+		SimpleDateFormat s = new SimpleDateFormat("yyyyMMddHH");
+		Date d = new Date();
+		String s1=s.format(d);
+		System.out.println(s1);
+		
+	}
+}

@@ -1,0 +1,113 @@
+package com.itheima_2;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+/*
+ * 定义一个学生类Student，属性：姓名(String name)、班级班号(String class_number)、分数(double score)
+	2.初始化数据将若干Student对象存入List集合
+	3.以班级为单
+	位,使用Map存储所有该班学生
+	4.统计每个班级的总分和平均分
+
+	可选解法提示:
+		a.采用面向对象的思想(组合)
+		b.不推荐使用Map<String,List<Student>>
+		c.推荐使用Map<String，ClassRoom>
+ * */
+public class Test10 {
+	public static void main(String[] args) {
+		Student s1 = new Student("张三","101",88);
+		Student s2 = new Student("李四","102",56	);
+		Student s3 = new Student("王五","101",77);
+		Student s4 = new Student("王二麻子","102",66);
+		List<Student> list = new ArrayList<>();
+		list.add(s3);
+		list.add(s2);
+		list.add(s1);
+		list.add(s4);
+		method1();
+		List<Student> list1 = new ArrayList<>();
+		List<Student> list2 = new ArrayList<>();
+		//List<Student> list3 = new ArrayList<>();
+		for (int i = 0; i <list.size(); i++) {
+			if(list.get(i).getClass_number().equals("101")){
+				list1.add(list.get(i));
+			}
+			else if(list.get(i).getClass_number().equals("102")){
+				list2.add(list.get(i));
+			}
+		}
+		printStudent(list1, list2);
+		
+	}
+
+	private static void printStudent(List<Student> list1, List<Student> list2) {
+		Map<String ,List> map = new HashMap<>();
+		map.put("101",list1);
+		map.put("102", list2);
+		Set<Entry<String, List>> entrys = map.entrySet();
+		for (Entry<String, List> entry : entrys) {
+			String key=entry.getKey();
+			System.out.println("班级："+key);
+			List<Student> list3 = entry.getValue();
+			for (Student student : list3) {
+				System.out.println(student);
+			}
+		}
+	}
+
+	private static void method1() {
+		Map<String,List<Student>> map = new HashMap<>();
+		Set<Map.Entry<String, List<Student>>>entrys=map.entrySet();
+		for (Map.Entry<String, List<Student>> entry : entrys) {
+			String key=entry.getKey();
+			System.out.println("班级："+key);
+			List<Student>values=entry.getValue();
+			for (Student value : values) {
+				 System.out.println(value);
+			}
+		}
+	}
+}
+class Student{
+	 private String name;
+	 private String class_number;
+	 private double score;
+	public Student() {
+	}
+	public Student(String name, String class_number, double score) {
+		super();
+		this.name = name; 
+		this.class_number = class_number;
+		this.score = score;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getClass_number() {
+		return class_number;
+	}
+	public void setClass_number(String class_number) {
+		this.class_number = class_number;
+	}
+	public double getScore() {
+		return score;
+	}
+	public void setScore(double score) {
+		this.score = score;
+	}
+	@Override
+	public String toString() {
+		return "Student [name=" + name + ", class_number=" + class_number + ", score=" + score + "]";
+	}	
+	
+}

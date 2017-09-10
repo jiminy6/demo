@@ -1,0 +1,51 @@
+package com.itheima_8;
+
+import java.util.HashMap;
+import java.util.Set;
+
+public class VendingMachine {
+	private String name;
+	public VendingMachine() {
+	}
+	private Float cashMoney;
+    public   HashMap<String, Float>map;
+    public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public Float getCashMoney() {
+		return cashMoney;
+	}
+	public void setCashMoney(Float cashMoney) {
+		this.cashMoney = cashMoney;
+	}
+	public HashMap<String, Float> getMap() {
+		return map;
+	}
+	public void setMap(HashMap<String, Float> map) {
+		this.map = map;
+	}
+	public VendingMachine(String name, Float cashMoney) {
+		super();
+		this.name = name;
+		this.cashMoney = cashMoney;
+	}
+	public void buyVend(Money money,String vend) {
+		Set<String> keys = map.keySet();
+		if(keys.contains(vend)){
+			Float price = map.get(vend);
+			if(money.getValue()>=price&&money.isFlag()){
+				System.out.println("在"+name+"成功购买一瓶"+vend);
+				System.out.println("找您"+(money.getValue()-map.get(vend))+"元");
+				System.out.println("机内剩余现金"+(cashMoney+map.get(vend))+"元");
+				
+			}
+		}
+		else {
+			System.out.println("购买异常，请打110报警");
+		}
+	}
+
+}

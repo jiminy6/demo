@@ -1,0 +1,9 @@
+package system;
+
+public class IntegerDemo {
+	public static void main(String[] args) {
+		Integer i = new Integer("10");
+		int a=i.intValue();
+		System.out.println(a);
+	}
+}

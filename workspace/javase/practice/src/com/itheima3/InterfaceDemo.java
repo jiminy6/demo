@@ -1,0 +1,19 @@
+package com.itheima3;
+
+public class InterfaceDemo {
+	public static void main(String[] args) {
+		
+	}
+}
+interface Animal{
+	public void eat();
+	
+	
+}
+class Cat implements Animal{
+	//int num;
+	@Override
+	public void eat() {	
+	}
+	
+}

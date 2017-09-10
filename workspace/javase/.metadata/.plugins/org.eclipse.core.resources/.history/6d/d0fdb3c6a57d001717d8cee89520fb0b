@@ -1,0 +1,18 @@
+package com.itheima;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+//import javax.sound.sampled.Line;
+
+public class CollectionDemo {
+	public static void main(String[] args) {
+		List <Integer> l = new ArrayList<>();
+		l.add(1);
+		l.add(2);
+		l.add(3);
+		int index=Collections.binarySearch(l, 2);
+		System.out.println(index);
+	}
+}

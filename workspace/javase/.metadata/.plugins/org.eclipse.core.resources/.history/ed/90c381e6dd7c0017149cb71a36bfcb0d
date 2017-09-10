@@ -1,0 +1,16 @@
+package com.itheima2;
+
+public class AbstractDemo2 {
+	public static void main(String[] args) {
+		Dog d = new Dog();
+		d.barking();
+	}
+}
+abstract class Animal{
+	String name="啸天犬";
+}
+class Dog extends Animal{
+	public void barking(){
+		System.out.println(name);
+	}
+}

@@ -1,0 +1,17 @@
+1503455457424	Extract method 'method2'
+1503472411064	Extract method 'getMaxStudent'
+1503472450051	Extract method 'getAve'
+1503474807598	Extract method 'unPass'
+1503479710374	Copy compilation unit
+1503479716981	Delete element
+1503479742520	Extract method 'method1'
+1503483209006	Extract method 'method2'
+1503483458618	Extract method 'method3'
+1503483590299	Extract method 'method4'
+1503485779071	Extract method 'print'
+1503487050963	Extract method 'print'
+1503487200904	Copy compilation unit
+1503487209804	Delete element
+1503491429335	Extract method 'printStudent'
+1503494782936	Extract method 'method3'
+1503494800280	Extract method 'method4'

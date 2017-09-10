@@ -1,0 +1,15 @@
+package com.ithiema;
+
+import java.lang.reflect.Field;
+
+public class Demo1 {
+	public static void main(String[] args) throws ClassNotFoundException, ReflectiveOperationException, ReflectiveOperationException {
+		Class clazz=Class.forName("com.ithiema.Student");
+		Object obj=clazz.newInstance();
+		Field f=clazz.getDeclaredField("name");
+		f.setAccessible(true);
+		System.out.println(f);
+		
+		
+	}
+}

@@ -1,0 +1,16 @@
+package com.itheima2;
+
+public class AbstractDemo2 {
+	public static void main(String[] args) {
+		Gou d = new Gou();
+		d.barking();
+	}
+}
+abstract class Dongwu{
+	String name="啸天犬";
+}
+class Gou extends Dongwu{
+	public void barking(){
+		System.out.println(name);
+	}
+}

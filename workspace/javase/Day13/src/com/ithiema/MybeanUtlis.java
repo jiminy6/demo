@@ -1,0 +1,35 @@
+package com.ithiema;
+
+import java.lang.reflect.Field;
+import java.util.Map;
+import java.util.Set;
+
+public class MybeanUtlis {
+	private MybeanUtlis() {
+
+	}
+
+	public static void setProperty(Object bean, String name, Object value)
+			throws NoSuchFieldException,  IllegalAccessException {
+		Class clazz = bean.getClass();
+		Field f = clazz.getDeclaredField(name);
+		f.setAccessible(true);
+		f.set(bean, value);
+	}
+
+	public static void populate(Object bean, Map map) throws ReflectiveOperationException {
+		Class clazz = bean.getClass();
+		Set keys = map.keySet();
+		for (Object key : keys) {
+			try {
+				Field f = clazz.getDeclaredField(key.toString());
+				f.setAccessible(true);
+				Object value = map.get(key);
+				f.set(bean, value );
+			} catch (NoSuchFieldException e) {
+				System.out.println("没有这个属性");
+				//e.printStackTrace(); 
+			} 
+		}
+	}
+}
