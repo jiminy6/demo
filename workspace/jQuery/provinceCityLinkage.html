@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+这个是完成省和市的二级联动效果，其中省的效果基本掌握了，和市的联动效果还待熟练
+1.写完省的options之后，通过省的onchange回调一个函数，让市的表单同步
+2.初始化时每次市的options长度置为1
+3.通过this.value获取到select的省份的id，pid
+4.遍历china，找到id为pid的省份，china[i]
+5.获取china[i]的所有城市数组array
+6.new option(array[i].c_id,array[i].c_name)并将它添加到city中的options中-->
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>|
+<select name="" id="province">
+    <option value="">请选择省</option>
+</select>
+<select name="" id="city">
+    <option value="">请选择市</option>
+</select>
+<script src="JS/cities.js"></script>
+<script type="text/javascript">
+    var apro = document.getElementById('province')
+    var acity = document.getElementById('city')
+    for (var i = 0; i < china.length; i++) {
+        var option = new Option(china[i].p_name, china[i].p_id)
+        apro.options.add(option)
+    }
+    //将所有的省添加到省的下拉列表中
+    //根据所选择的省，在市中加载相应的列表
+    apro.onchange = function () {
+        acity.options.length = 1;
+        var p_id = this.value;
+//        alert(this.value)
+//            for(var j=0;j<p_id.length;j++){
+//                var coption=new Option(p_id[j].c_id,p_id.c_name);
+//                acity.options.add(coption)
+//            }
+        //先去遍历，判断P_id的值和哪个省份的值相同
+        for (var j = 0; j < china.length; j++) {
+            if (p_id == china[j].p_id) {
+                var allCity = china[j].cities;
+                //之前除了bug因为china[j]中的[j]没有写，这样意思就完全变了。
+                for (var i = 0; i < allCity.length; i++) {
+                    var option = new Option(allCity[i].c_name, allCity[i].c_id)
+                    acity.options.add(option)
+                }
+            }
+        }
+    };
+
+</script>
+
+</body>
+</html>

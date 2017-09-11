@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .box{
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+            border: 2px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <img src="img/1.jpg" alt="" id="aimg" width="100%" >
+</div>
+<script type="text/javascript">
+     var pic=document.getElementById('aimg')
+    setInterval(changePic,2000);
+
+    var num=1;
+    function changePic() {
+        num++;
+        if(num==3){
+            num=1;
+        }
+        pic.src='img/'+num+'.jpg'
+
+    }
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--又杀死了几个bug-->
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<select name="" id="province">
+    <option value="">请输入省份</option>
+</select>
+<select name="" id="city">
+    <option value="">请输入城市</option>
+</select>
+<script src="JS/cities.js"></script>
+<script type="text/javascript">
+    var alpro = document.getElementById('province')
+    var alcity = document.getElementById('city')
+    for (var i = 0; i < china.length; i++) {
+        alpro.options.add(new Option(china[i].p_name, china[i].p_id))
+    }
+
+    alpro.onchange = function () {
+        var p_id = this.value;
+        for (var i = 0; i < china.length; i++) {
+            if (p_id == china[i].p_id) {
+                alcity.options.length = 1;
+                    var allcities=china[i].cities;
+                    for(var j=1;j<allcities.length;j++){
+                        alcity.options.add(new Option(allcities[j].c_name,allcities[j].c_id))
+                        
+                    }
+            }
+        }
+    }
+
+</script>
+
+</body>
+</html>

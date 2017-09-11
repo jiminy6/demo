@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .box {
+            width: 500px;
+            height: 500px;
+            border: 1px solid #ccc;
+            margin: 0 auto;
+        }
+
+        span {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <form action="#" method="post">
+        <table>
+            <tr>
+                <td>用户名</td>
+                <td><input type="text" size="30" name="username"
+                           onclick="show('username','用户名需要6到10个字母或数字')"
+                           onblur="check('username','用户名不规范')"></td>
+                <td><span id="usernamespan"></span></td>
+            </tr>
+            <tr>
+                <td>密码</td>
+                <td><input type="password" size="30" name="password"
+                           onclick="show('password','密码格式为六位')"
+                           onblur="check('password','密码格式不正确')"></td>
+                <td><span id="passwordspan"></span></td>
+            </tr>
+            <tr>
+                <td>确认密码</td>
+                <td><input type="password" size="30" name="repassword"
+                           onblur="check('repassword','两次密码不一致')"></td>
+                <td><span id="repasswordspan"></span></td>
+            </tr>
+            <tr>
+                <td>性别</td>
+                <td>
+                    <input type="radio" name="gender" value="male">男
+                    <input type="radio" name="gender" value="female">女
+                </td>
+                <td><span id="genderspan"></span></td>
+            </tr>
+            <tr>
+                <td>爱好</td>
+                <td>
+                    <input type="checkbox" value="coding" name="hobby">编程
+                    <input type="checkbox" value="dance" name="hobby">跳舞
+                    <input type="checkbox" value="sing" name="hobby">唱歌
+                </td>
+                <td>
+                    <span id="hobbyspan"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="提交"></td>
+                <td><input type="reset" value="重置"></td>
+                <td></td>
+            </tr>
+        </table>
+    </form>
+</div>
+<script type="text/javascript">
+    function show_id(id) {
+        return document.getElementById(id)
+    }
+
+    function show_name(name) {
+        return document.getElementsByName(name);
+    }
+
+    function show(name, info) {
+        show_id(name + 'span').innerHTML = info;
+    }
+
+    function check(name, info) {
+        var a = show_name(name)[0].value;
+        if (a == '') {
+            show_id(name + 'span').innerHTML =info
+            return false;
+        }
+        var msg = regcheck(name, info, a);
+        if (msg != '') {
+            show_id(name + 'span').innerHTML = info
+        }
+        else {
+            show_id(name + 'span').innerHTML = ' '
+        }
+        function regcheck(name, info, a) {
+            var msg = ''
+            switch (name) {
+                case 'password':
+                    if (!/^.{6}$/.test(a)) {
+                        msg = info;
+                    }
+                    break;
+                case 'repassword':
+                    if (a != show_name('password')[0].value) {
+                        msg = info;
+                    }
+                    break;
+                case 'username':
+                    if (!/^[a-zA-Z0-9]{6,10}$/.test(a)) {
+                        msg = info;
+                    }
+                    break;
+            }
+            return msg;
+        }
+    }
+    function checkGender(name,info) {
+        var flag = false;
+        var _gender = show_name(name)
+        for (var i = 0; i < _gender.length; i++) {
+            if (_gender[i].checked) {
+                flag = true;
+                break;
+            }
+        }
+        if (!flag) {
+            show_id('genderspan').innerHTML ='性别不能为空';
+        }
+        else{
+            show_id('genderspan').innerHTML=''
+        }
+        return flag;
+    }
+    function checkHobby() {
+        var flag = false;
+        //如果没有一个被选中，那么就输出info，否则输出''
+        var _hobby = show_name(name)
+
+        var _id = show_id('hobbyspan')
+        for (var i = 0; i < _hobby.length; i++) {
+            if (_hobby[i].checked) {
+                flag = true;
+                break;
+            }
+        }
+        if (flag) {
+            _id.innerHTML ='';
+        }
+        else {
+            _id.innerHTML ="爱好不能为空"
+        }
+        return flag;
+    }
+
+    onsubmit = function () {
+        var flag=true;
+        if (!check('username','用户名信息')) {
+            flag = false;
+        }
+        if (!check('password','密码存在问题')) {
+            flag = false
+        }
+        if (!check('repassword','两次密码不一致')) {
+            flag = false;
+        }
+        if (!checkGender()) {
+            flag = false;
+        }
+        if (!checkHobby()) {
+            flag = false;
+        }
+        return flag;
+    }
+</script>
+</body>
+</html>

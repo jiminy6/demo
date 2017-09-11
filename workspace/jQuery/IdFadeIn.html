@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<img src="img/1.jpg" alt=""style="display:none" id="aimg">
+</body>
+<script src="JS/jquery-1.11.0.js"></script>
+<script type="text/javascript">
+    var adimg=$('#aimg')
+    setTimeout(function () {
+        adimg.fadeIn(1000);
+        adimg.fadeOut(1000);
+        adimg.slideUp(1000)
+
+    },1000)
+</script>
+</html>

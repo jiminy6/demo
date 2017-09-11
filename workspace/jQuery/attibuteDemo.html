@@ -5,7 +5,12 @@
     <title>Title</title>
 </head>
 <body>
-<input type="text" name="username" aaa="aaa">
+<input type="text" name="username" aaa="abc"><br>
+<input type="text" name="" bbb="bcd" value=""><br>
+<input type="text" name="" ccc="aaa" value=""><br>
+<input type="text" name="" ddd="ddd" value=""><br>
+<input type="text" name="" ccc="eee" value=""><br>
+<input type="text" name="" ddd="fff" value=""><br>
 <!--  需求一：获取自定义属性aaa的值
    需求二：设置自定义属性bbb的值为’bbb’
    需求三：设置多个自定义属性ccc的值为’ccc’,ddd的值为’ddd’
@@ -14,10 +19,27 @@
    需求六：设置固有属性id的值为’username’
    需求七：设置多个固有属性id的值为’username’,value的值为’Jack’
    需求八：删除固有属性 id
+   我想拥有你所有一切。
 -->
 <script src="JS/jquery-1.11.0.js"></script>
 <script type="text/javascript">
-    
+    console.log($('input[type=text]').attr('aaa'))
+    $('input[type=text]').attr('bbb', 'eee');
+    console.log($('input[type=text]').attr('bbb'))
+    $('input[type=text]').attr({
+        "ccc": "ccc",
+         "ddd":"ddd"
+    });
+    $('input[type=text]').removeAttr('aaa')
+    console.log($('input[type=text]').prop('name'))
+    console.log('--------------------')
+    $('input[type=text]').prop('name','password')
+    console.log($('input[type=text]').prop('name'))
+    $('input[type=text]').prop({
+        "id":"uername",
+        "value":"jake"
+    });
+
 </script>
 </body>
 </html>

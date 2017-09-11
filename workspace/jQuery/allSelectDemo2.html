@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="checkbox" id="ck"><br>
+<input type="checkbox"><br>
+<input type="checkbox"><br>
+<input type="checkbox"><br>
+<input type="checkbox">
+<script src="JS/jquery-1.11.0.js"></script>
+<script type="text/javascript">
+    $('#ck').click(function () {
+        $('input').prop('checked',$(this).prop('checked'));
+    });
+</script>
+
+</body>
+</html>

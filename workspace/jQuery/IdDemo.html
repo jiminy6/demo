@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .box{
+            width: 300px;
+            height: 300px;
+            border:2px solid #ccc;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <img src="img/mm.png" alt="" style="display:none" id="ipic" width="100%" >
+</div>
+<script src="JS/jquery-1.11.0.js"></script>
+<script type="text/javascript">
+    var idpic=$('#ipic')
+    setTimeout(function () {
+        idpic.fadeIn(1000)
+        idpic.fadeOut(1000)
+    },2000)
+</script>
+</body>
+</html>
