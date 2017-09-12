@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--掌握jQuery的遍历
+不容易，终于特么自己打出来了
+我这么厉害，你会喜欢我吗？不会我教你呀😃-->
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<select name="province" id="province">
+    <option value="">请输入省</option>
+</select>
+<select name="city" id="city">
+    <option value="">请输入市</option>
+</select>
+<script src="JS/jquery-1.11.0.js"></script>
+<script src="JS/cities.js"></script>
+<script type="text/javascript">
+    $(china).each(function () {
+        var option = $('<option value="' + this.p_id + '">' + this.p_name + '</option>')
+        $('#province').append(option)
+        alert('😘')
+    })
+    $('#province').change(function () {
+        var p_id=this.value
+        $('#city')[0].options.length=1;
+        //获取所选择的省对应的id😘
+        $(china).each(function () {
+            if(p_id==this.p_id){
+                //遍历找到对应的省
+                var cityAarry=this.cities
+                $(cityAarry).each(function () {
+                    var option = $('<option value="' + this.c_id + '">' + this.c_name + '</option>')
+                    $('#city').append(option)
+                })
+            }
+        })
+    })
+
+</script>
+</body>
+</html>

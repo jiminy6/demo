@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        p {
+            text-align: center;
+            font-size: 24px;
+            color: red;
+            font-weight: bold;
+        }
+
+        table {
+            margin: 0 auto;
+            border: 0;
+        }
+
+        table tr {
+            height: 40px;
+            border: 0;
+        }
+
+        table tr td {
+            padding: 0 14px;
+            border: 1px solid #999
+        }
+
+        label.error {
+            margin-left: 10px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<p>员工信息录入</p>
+<form name="empForm" id="empForm" action="#" method="post">
+    <table border=1>
+        <tr>
+            <td>真实姓名(不能为空 ,没有其他要求)</td>
+            <td><input type="text" id="realname" name="realname"/>
+            </td>
+        </tr>
+        <tr>
+            <td>登录名(不能为空,长度在5-8之间,可以包含中文字符(一个汉字算一个字符))</td>
+            <td><input type="text" id="username" name="username"/></td>
+        </tr>
+        <tr>
+            <td>密码(不能为空,长度6-12字符或数字,不能包含中文字符)</td>
+            <td><input type="password" id="password" name="password"/></td>
+        </tr>
+        <tr>
+            <td>重复密码</td>
+            <td><input type="password" id="repassword" name="repassword"/></td>
+        </tr>
+        <tr>
+            <td>性别(必选其一)</td>
+            <td>
+                <input type="radio" id="male" value="male" name="gender"/>&nbsp;男&nbsp;&nbsp;
+                <input type="radio" id="female" value="female" name="gender"/>&nbsp;女
+                <label  class="error" for="gender" style="margin-left: 35px"></label>
+            </td>
+        </tr>
+        <tr>
+            <td>年龄(必填26-50)</td>
+            <td><input type="text" id="age" name="age"/></td>
+        </tr>
+        <tr>
+            <td>你的学历</td>
+            <td>
+                <select name="education" id="education">
+                    <option value="">--请选择你的学历--</option>
+                    <option value="zk">专科</option>
+                    <option value="bk">本科</option>
+                    <option value="yjs">研究生</option>
+                    <option value="ss">硕士</option>
+                    <option value="bs">博士</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>出生日期(1982/09/21)</td>
+            <td><input type="text" id="birthday" name="birthday" value=""/></td>
+        </tr>
+        <tr>
+            <td>兴趣爱好</td>
+            <td colspan="2">
+                <input type="checkbox" name="hobby" value="sing"/>&nbsp;唱歌 &nbsp;
+                <input type="checkbox" name="hobby" value="dance"/>&nbsp;跳舞 &nbsp;
+                <input type="checkbox" name="hobby" value="coding"/>&nbsp;编码 &nbsp;
+                <input type="checkbox" name="hobby" value="shoping"/>&nbsp;购物 &nbsp;
+                <label  class="error" for="hobby"></label>
+            </td>
+        </tr>
+        <tr>
+            <td align="left">电子邮箱</td>
+            <td><input type="text" id="email" name="email"/></td>
+        </tr>
+        <tr>
+            <td align="left">身份证(15-18)</td>
+            <td><input type="text" id="card" name="card"/></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="保存"></td>
+        </tr>
+    </table>
+</form>
+<script src="JS/jquery-1.8.3.min.js"></script>
+<script src="JS/jquery.validate.js"></script>
+<script type="text/javascript">
+  $.validator.addMethod('pwdFormat',function (value,element,params) {
+      var reg=new RegExp('^[a-zA-Z0-9]{'+ params[0] + ','+params[1] +'}$');
+      return reg.test(value);
+  },'密码必须是{0}-{1}位的数字或字母')
+  $.validator.addMethod('sfzFormat',function (value, element, params) {
+      if(params){
+          if(value.length==15){
+              var reg=/^\d{15}$/
+//              console.log(reg)
+//              var reg1=new RegExp('/^\d{15}$/')
+//              console.log(reg1)
+              return reg.test(value)
+          }
+          else if(value.length==18){
+              var reg=/^\d{18}|\d{17}[X|x]$/
+              return reg.test(value)
+          }
+      }
+  })
+    $('#empForm').validate({
+        rules: {
+            realname: {
+                required: true
+            },
+            username: {
+                required: true,
+                rangelength: [5,8]
+            },
+            password:{
+                required:true,
+                pwdFormat:[6,12]
+            },
+            repassword:{
+                equalTo:$('#password')
+            },
+            gender:{
+              required:true
+            },
+            age:{
+                required:true,
+                range:[26,50]
+            },
+            education:{
+                required:true
+            },
+            birthday:{
+                required:true,
+                date:true
+            },
+            hobby:{
+                required:true
+            },
+            email:{
+                required:true,
+                email:true
+            },
+            card:{
+                required:true,
+                sfzFormat:true
+            }
+        },
+
+        messages: {
+            realname: {
+                required: '真实姓名不能为空'
+            },
+            username: {
+                required: '用户名不能为空',
+                rangelength:'用户名必须是5到8位'
+            },
+            password:{
+                required:'密码不能为空'
+            },
+            repassword:{
+                equalTo:'两次密码必须一致'
+            },
+            gender:{
+                required:'性别为必选项目'
+            },
+            age:{
+                required:'年龄为必选项',
+                range:'年龄必须在{0}-{1}之间'
+            },
+            education:{
+                required:'学历为必选项'
+            },
+            birthday:{
+                required:'出生日期为必选项',
+                date:'请输入正确的日期格式'
+            },
+            hobby:{
+                required:'爱好为必选项'
+            },
+            email:{
+                required:'邮箱为必选项',
+                email:'请输入正确的邮箱格式'
+            },
+            card:{
+                required:'身份证为必填项',
+                sfzFormat:'身份证格式不符合规范'
+            }
+        }
+    })
+</script>
+</body>
+</html>

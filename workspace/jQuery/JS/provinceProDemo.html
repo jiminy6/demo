@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<select name="province" id="province">
+    <option value="">请选择省</option>
+</select>
+<select name="city" id="city">
+    <option value="">请选择市</option>
+</select>
+<script src="jquery-1.11.0.js"></script>
+<script src="cities.js"></script>
+<script type="text/javascript">
+    $(china).each(function () {
+        var option = $('<option value=" ' + this.p_id + ' ">' + this.p_name + '</option>');
+        $('#province').append(option)
+    });
+    $('#province').change(function () {
+        $('#city')[0].options.length=1;
+        var p_id=$(this).val()
+        $(china).each(function () {
+            if(p_id==this.p_id){
+               var cityArray= this.cities;
+               $(cityArray).each(function () {
+                   var option = $('<option value=" ' + this.c_id + ' ">' + this.c_name + '</option>');
+                   $('#city').options.append(option)
+                   console.log(1)
+               })
+            }
+        })
+    })
+</script>
+</body>
+</html>
