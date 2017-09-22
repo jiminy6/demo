@@ -1,0 +1,26 @@
+package com.practice;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+public class Demo3 {
+	public static void main(String[] args)  {
+		Connection conn=null;
+		Statement statement=null;
+		 conn = JdbcUtils.getConnection();
+		 try {
+			statement = conn.createStatement();
+			String sql="select * from student ";
+			ResultSet resultSet = statement.executeQuery(sql);
+			while(resultSet.next()){
+				String city = resultSet.getString("city");
+				String name = resultSet.getString("name");
+				System.out.println(name+"--"+city);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+	}
+}

@@ -1,0 +1,12 @@
+package com.pool.service;
+
+import com.pool.dao.UserDao;
+import com.pool.domain.User;
+
+public class UserService {
+	public User login(){
+		UserDao userDao = new UserDao();
+		User user = userDao.findByNameAndPassword();
+		return user;
+	}
+}

@@ -1,0 +1,14 @@
+package com.transfer;
+
+public class Service {
+	public static void main(String[] args) {
+		
+	}
+
+	public boolean transfer(String outname, String inname, int money) {
+		Dao dao = new Dao();
+		dao.outmoney(outname,money);
+		dao.inmoney(inname,money);
+		return false;
+	}
+}

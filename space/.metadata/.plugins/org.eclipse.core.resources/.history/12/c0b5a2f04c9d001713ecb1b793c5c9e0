@@ -1,0 +1,16 @@
+package com.practice_2;
+
+import java.sql.DriverManager;
+
+public class JdbcUtils {
+	static {
+		String driverClass="";
+		String url;
+	}
+	public static Connection getConnection (){
+		 Class.forName(driverClass);
+		 String url;
+		DriverManager.getConnection(url, user, password);
+		 
+	}
+}

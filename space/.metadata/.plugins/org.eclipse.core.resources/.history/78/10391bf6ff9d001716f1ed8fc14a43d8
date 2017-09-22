@@ -1,0 +1,22 @@
+package com.pool;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class Demo1 {
+	public static void main(String[] args) throws SQLException {
+		MySource mm = new MySource();
+		Connection conn = mm.getConnection();
+		Statement statement = conn.createStatement();
+		String sql="select * from user";
+		ResultSet resultSet = statement.executeQuery(sql);
+		while(resultSet.next()){
+			String name = resultSet.getString("name");
+			String password = resultSet.getString("password");
+			System.out.println(name+":"+password);
+		}
+		mm.
+	}
+}

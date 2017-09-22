@@ -1,0 +1,27 @@
+package com.pool;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+
+import org.apache.commons.dbutils.QueryRunner;
+
+import com.mchange.v2.c3p0.ComboPooledDataSource;
+
+public class Demo2 {
+	public static void main(String[] args) throws SQLException {
+//		insert();
+		QueryRunner queryRunner = new QueryRunner(new ComboPooledDataSource());
+		String sql="insert into user values(?,?,?);";
+		Object[] params={3,"admin3","333"};
+		queryRunner.update(sql, params);
+		System.out.println(queryRunner.update(sql));
+		
+	}
+
+	private static void insert() throws SQLException {
+		QueryRunner queryRunner = new QueryRunner(new ComboPooledDataSource());
+		String sql="insert into user values(?,?,?);";
+		Object []param={2,"admin1","234"};
+		queryRunner.update(sql, param);
+	}
+}

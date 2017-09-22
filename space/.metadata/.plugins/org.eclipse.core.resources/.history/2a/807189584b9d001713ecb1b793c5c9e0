@@ -1,0 +1,10 @@
+package com.practice_2;
+
+public class JdbcUtils {
+	static {
+		String driverClass="";
+	}
+	public static Connection getConnection (){
+		 Class.forName(driverClass);
+	}
+}

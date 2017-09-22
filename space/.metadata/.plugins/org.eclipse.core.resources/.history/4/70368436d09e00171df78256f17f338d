@@ -1,0 +1,22 @@
+package com.fun;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+
+import org.apache.commons.dbutils.QueryRunner;
+import org.apache.commons.dbutils.handlers.BeanHandler;
+import org.junit.Test;
+
+public class Demo2 {
+	@Test
+	public void demo2() throws SQLException{
+		QueryRunner queryRunner = new QueryRunner(JdbcUtils.getDataSource());
+		method1(queryRunner);
+	}
+
+	private void method1(QueryRunner queryRunner) throws SQLException {
+		String sql="select * from user where id=?";
+		User user = queryRunner.query(sql, new BeanHandler<User>(User.class), 5);
+		System.out.println(user);
+	}
+}

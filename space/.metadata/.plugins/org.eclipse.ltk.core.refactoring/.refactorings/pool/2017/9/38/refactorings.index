@@ -1,0 +1,16 @@
+1505912791257	Extract method 'method'
+1505917421057	Rename resource 'java.properties'
+1505917440456	Extract method 'method1'
+1505920188816	Delete element
+1505920397138	Delete element
+1505920749103	Rename resource 'c3p0.xml'
+1505921516263	Copy file
+1505957077997	Extract method 'insert'
+1505961381189	Extract method 'method1'
+1505963412163	Rename package 'com.web'
+1505963552118	Copy compilation unit
+1505964504542	Copy compilation unit
+1505997058672	Copy files
+1505997257312	Copy compilation unit
+1505998282323	Copy compilation unit
+1505999192417	Copy file

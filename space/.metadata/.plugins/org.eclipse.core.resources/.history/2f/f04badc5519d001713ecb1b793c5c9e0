@@ -1,0 +1,28 @@
+package com.practice_2;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class Demo {
+	static {
+		
+	}
+	public static void main(String[] args) throws ClassNotFoundException, SQLException {
+		Connection conn = JdbcUtils.getConnection();
+		Statement statement = conn.createStatement();
+		String sql="select * from user";
+		ResultSet resultSet=null;
+		 resultSet = statement.executeQuery(sql);
+		while(resultSet.next()){
+			String name = resultSet.getString("name");
+			String password = resultSet.getString("password");
+			System.out.println(name+password);
+			
+		}
+		JdbcUtils.release(conn, statement, resultSet);
+		
+	}
+}

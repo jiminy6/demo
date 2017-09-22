@@ -1,0 +1,56 @@
+package com.fun;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+import org.apache.commons.dbutils.QueryRunner;
+import org.apache.commons.dbutils.handlers.BeanHandler;
+import org.apache.commons.dbutils.handlers.BeanListHandler;
+import org.apache.commons.dbutils.handlers.MapHandler;
+import org.apache.commons.dbutils.handlers.ScalarHandler;
+import org.junit.Test;
+
+public class Demo2 {
+	@Test
+	public void dem1o2() throws SQLException{
+		QueryRunner queryRunner = new QueryRunner(JdbcUtils.getDataSource());
+		String sql="select * from user;";
+		method4(queryRunner, sql);
+//		System.out.println(map);
+	}
+
+	private void method4(QueryRunner queryRunner, String sql) throws SQLException {
+		Map<String, Object> map = queryRunner.query(sql,new MapHandler());
+		Set<Entry<String,Object>> entrySet = map.entrySet();
+		for (Entry<String, Object> entry : entrySet) {
+			String key = entry.getKey();
+			Object value = entry.getValue();
+			System.out.println(key+value);
+		}
+	}
+
+	private void method3(QueryRunner queryRunner) throws SQLException {
+		String sql="select count(*) from user";
+		Long query = queryRunner.query(sql,new ScalarHandler<Long>());
+		System.out.println(query);
+	}
+
+	private void method2(QueryRunner queryRunner) throws SQLException {
+		String sql="select * from user";
+		
+		List<User> list = queryRunner.query(sql,new BeanListHandler<User>(User.class));
+		for (User user : list) {
+			System.out.println(user);
+		}
+	}
+
+	private void method1(QueryRunner queryRunner) throws SQLException {
+		String sql="select * from user where id=?";
+		User user = queryRunner.query(sql, new BeanHandler<User>(User.class), 5);
+		System.out.println(user);
+	}
+}

@@ -1,0 +1,11 @@
+package com.pool.dao;
+
+import com.pool.domain.User;
+
+public class UserDao {
+	public User findByNameAndPassword(){
+		
+		return null;
+		
+	}
+}
